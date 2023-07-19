@@ -1,0 +1,36 @@
+apiVersion: 1
+
+providers:
+- name: 'node_exporter'
+  orgId: 1
+  folder: ''
+  type: file
+  disableDeletion: true
+  editable: false
+  options:
+    path: /etc/grafana/provisioning/dashboards/
+- name: 'uptime_kuma'
+  orgId: 1
+  folder: ''
+  type: file
+  disableDeletion: true
+  editable: false
+  options:
+    path: /etc/grafana/provisioning/dashboards/
+- name: 'windows_stats'
+  orgId: 1
+  folder: ''
+  type: file
+  disableDeletion: true
+  editable: false
+  options:
+    path: /etc/grafana/provisioning/dashboards/
+- name: 'home'
+  orgId: 1
+  folder: ''
+  type: file
+  disableDeletion: true
+  editable: false
+  isDefault: true 
+  options:
+    path: /etc/grafana/provisioning/dashboards/

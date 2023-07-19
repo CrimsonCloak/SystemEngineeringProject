@@ -1,0 +1,9 @@
+collectors:
+  enabled: cpu,cs,net,service,ad,dns,os,process,logical_disk
+collector:
+  service:
+    services-where: "Name='windows_exporter'"
+  process:
+    include: "process_id='0'"
+log:
+  level: warn

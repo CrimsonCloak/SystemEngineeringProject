@@ -1,0 +1,19 @@
+[Unit]
+Description=Matrix Synapse service
+After=network.target
+
+[Service]
+Type=forking
+WorkingDirectory=/srv/synapse
+ExecStart=/usr/local/bin/synctl start
+ExecStop=/usr/local/bin/synctl stop
+ExecReload=/usr/local/bin/synctl restart
+User=root
+Group=root
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=synapse
+
+[Install]
+WantedBy=multi-user.target

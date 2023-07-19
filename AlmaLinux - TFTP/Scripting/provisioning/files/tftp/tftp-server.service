@@ -1,0 +1,12 @@
+[Unit]
+Description=Tftp Server
+Requires=tftp-server.socket
+Documentation=man:in.tftpd
+
+[Service]
+ExecStart=/usr/sbin/in.tftpd -c -p -s /var/lib/tftpboot
+StandardInput=socket
+
+[Install]
+WantedBy=multi-user.target
+Also=tftp-server.socket

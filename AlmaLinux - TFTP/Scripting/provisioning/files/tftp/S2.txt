@@ -1,0 +1,145 @@
+version 15.0
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Switch
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+system mtu routing 1500
+!
+!
+!
+!
+ --More--
+*Mar  1 01:44:51.514: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on FastEthernet0/2 (1), with S-T01 FastEthernecrypto pki trustpoint TP-self-signed-3210492416
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3210492416
+ revocation-check none
+ rsakeypair TP-self-signed-3210492416
+!
+!
+crypto pki certificate chain TP-self-signed-3210492416
+ certificate self-signed 01
+  3082022B 30820194 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 33323130 34393234 3136301E 170D3933 30333031 30303031
+  30305A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 32313034
+  39323431 3630819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281
+  8100DF4F 8B04A9E6 AE905756 057F751F D97A8D24 4A14A98F 85A1326C BF3DC5FD
+  19BEADEB DD552375 1D429A3D D54AF7A3 DA1DAEC3 AB3451DC F569A08C 5F9A7CA5
+  63D06956 A032C634 48B3AD1A AC822D82 ECA40959 687849BC 5C319987 1724DE1C
+  50F3A98E DB16CF24 8EA2B817 3DC24023 8BDBE5E0 7409239A 63CCF0C5 0F9278EA
+  DF4F0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 301F0603
+  551D2304 18301680 149F3C91 D3212E41 BEB07F08 BFFAA825 C47C8F3C BF301D06
+  03551D0E 04160414 9F3C91D3 212E41BE B07F08BF FAA825C4 7C8F3CBF 300D0609
+  2A864886 F70D0101 05050003 81810044 008E92C4 645E895F E3EFF644 E6D3482C
+  51E5ED09 854C47F6 ED287468 8806AE10 8A945F9B 7A9B3B92 3DAC0EE7 3783A9A2
+  1F0A6BAE 46E03D6D DC80FCCD CAF7FEE7 E5A36F90 E4D3C338 509C1E93 EA8EBBF6
+  6FE578AB D47AEB78 46B1878F AD3F6892 39F43BAB 9750011E F9C1B395 C3825AF5
+  9E3EF864 810D10B5 4ED34E1E 265C8C
+        quit
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ switchport mode trunk
+!
+interface FastEthernet0/2
+ switchport mode trunk
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/14
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/15
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/16
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/17
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan20
+ ip address 10.10.20.10 255.255.255.0
+!
+ip http server
+ip http secure-server
+!
+!
+line con 0
+line vty 0 4
+ login
+line vty 5 15
+ login
+!
+end

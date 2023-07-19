@@ -1,0 +1,57 @@
+# Configuration file for Synapse.
+#
+# This is a YAML file: see [1] for a quick introduction. Note in particular
+# that *indentation is important*: all the elements of a list or dictionary
+# should have the same indentation.
+#
+# [1] https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
+#
+# For more information on how to configure Synapse, including a complete accounting of
+# each option, go to docs/usage/configuration/config_documentation.md or
+# https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html
+server_name: "thematrix.eiland-x.be"
+pid_file: /srv/synapse/homeserver.pid
+listeners:
+  - port: 8008
+    tls: false
+    type: http
+    #x_forwarded: true
+    bind_addresses: ['::1', '0.0.0.0']
+    resources:
+      - names: [client, federation]
+        compress: false
+  - port: 443
+    tls: true
+    type: http
+    #x_forwarded: true
+    bind_addresses: ['10.10.20.5']
+    resources:
+      - names: [client, federation]
+        compress: false
+  - port: 8448
+    tls: true
+    type: http
+    #x_forwarded: true
+    bind_addresses: ['10.10.20.5']
+    resources:
+      - names: [client, federation]
+        compress: false
+database:
+  name: sqlite3
+  args:
+    database: /srv/synapse/homeserver.db
+log_config: "/srv/synapse/thematrix.local.log.config"
+media_store_path: /srv/synapse/media_store
+registration_shared_secret: "mn+sy^S32z.6,qc3~GVJwzte:BtFE1gdtS#Wz0;J&jOCB.r2W2"
+report_stats: true
+macaroon_secret_key: "V=CMmgcHG7eF^cvikF=#okOivqa0sZ,I,W~s&gD*mwq^3:r1R8"
+form_secret: "sxHO:xxr.lmv+5XpCNQl8;UORvjSu8X27GLTZGBoFohr6aT;8v"
+signing_key_path: "/srv/synapse/thematrix.local.signing.key"
+trusted_key_servers:
+  - server_name: "matrix.org"
+
+tls_certificate_path: "/srv/synapse/thematrix.eiland-x.be.crt"
+tls_private_key_path: "/srv/synapse/thematrix.eiland-x.be.key"
+suppress_key_server_warning: true
+
+# vim:ft=yaml

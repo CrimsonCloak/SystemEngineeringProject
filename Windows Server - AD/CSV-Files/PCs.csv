@@ -1,0 +1,7 @@
+﻿Naam;OU
+PCCast1;OU=Cast,OU=PCs,OU=DomainWorkstations,DC=thematrix,DC=eiland-x,DC=be
+PCCast2;OU=Cast,OU=PCs,OU=DomainWorkstations,DC=thematrix,DC=eiland-x,DC=be
+DirectorPC1;OU=Directors,OU=Crew,OU=PCs,OU=DomainWorkstations,DC=thematrix,DC=eiland-x,DC=be
+DirectorPC2;OU=Directors,OU=Crew,OU=PCs,OU=DomainWorkstations,DC=thematrix,DC=eiland-x,DC=be
+PCCrew1;OU=Crew,OU=PCs,OU=DomainWorkstations,DC=thematrix,DC=eiland-x,DC=be
+PCCRew2;OU=Crew,OU=PCs,OU=DomainWorkstations,DC=thematrix,DC=eiland-x,DC=be

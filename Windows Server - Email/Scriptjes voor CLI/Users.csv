@@ -1,0 +1,7 @@
+﻿Firstname;Lastname;OU;Username;Email;Password;Group
+Keanu;Reeves;OU=Cast,OU=DomainUsers,DC=thematrix,DC=eiland-x,DC=be;Keanu.Reeves;keanu.reeves@thematrix.eiland-x.be;Kertml123!;Cast
+Carrie-Anne;Moss;OU=Cast,OU=DomainUsers,DC=thematrix,DC=eiland-x,DC=be;Carrie-Anne.Moss;carrie-anne.moss@thematrix.eiland-x.be;Camtml123!;Cast
+Lana;Wachowski;OU=Directors,OU=Crew,OU=DomainUsers,DC=thematrix,DC=eiland-x,DC=be;Lana.Wachowski;lana.wachowski@thematrix.eiland-x.be;Lawtml123!;Directors
+Lilly;Wachowski;OU=Directors,OU=Crew,OU=DomainUsers,DC=thematrix,DC=eiland-x,DC=be;Lilly.Wachowski;lilly.wachowski@thematrix.eiland-x.be;Liwtml123!;Directors
+Denzel;Washington;OU=Producers,OU=Crew,OU=DomainUsers,DC=thematrix,DC=eiland-x,DC=be;Denzel.Washington;denzel.washington@thematrix.eiland-x.be;Dewtml123!;Producers
+Harrison;Ford;OU=Producers,OU=Crew,OU=DomainUsers,DC=thematrix,DC=eiland-x,DC=be;Harrison.Ford;harrison.ford@thematrix.eiland-x.be;Haftml123!;Producers

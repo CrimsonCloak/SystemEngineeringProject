@@ -1,0 +1,37 @@
+global:
+  scrape_interval: 10s
+
+rule_files:
+  - /etc/prometheus/alerts.yml
+
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      - localhost:9093
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9000']
+  - job_name: 'uptime'
+    scrape_interval: 30s
+    scheme: http
+    static_configs:
+      - targets: ['localhost:3001']
+    basic_auth: # Only needed if authentication is enabled (default)
+      username: Hallo
+      password: Hallo123
+  - job_name: 'node_exporter_dozer'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['localhost:9100']
+  - job_name: 'node_exporter_trinity'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['10.10.20.3:9100']
+  - job_name: 'node_exporter_theoracle'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['10.10.20.5:9100']

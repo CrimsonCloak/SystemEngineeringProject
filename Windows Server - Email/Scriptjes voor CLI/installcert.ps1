@@ -1,0 +1,2 @@
+Import-ExchangeCertificate -FileData ([System.IO.File]::ReadAllBytes('Z:\certs\thematrix.eiland-x.be.key'))
+Import-ExchangeCertificate -FileData ([System.IO.File]::ReadAllBytes('Z:\certs\thematrix.eiland-x.be.crt'))
